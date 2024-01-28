@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { BaseColaboradores } from './BaseColaboradores';
 import Listado from './components/Listado';
 import Formulario from './components/Formulario';
 import Buscador from './components/Buscador';
 import Alert from './components/Alert';
+import { BaseColaboradores } from './BaseColaboradores';
 import './App.css';
 
 function App() {
@@ -38,6 +38,12 @@ function App() {
 		setAlertMessage('Colaborador agregado exitosamente');
 		setAlertType('success');
 		setAlertBackgroundColor('#d4edda');
+
+		setTimeout(() => {
+			setAlertMessage('');
+			setAlertType('');
+			setAlertBackgroundColor('');
+		}, 3000);
 	};
 
 	const buscarColaborador = (query) => {
@@ -80,7 +86,7 @@ function App() {
 					<Alert
 						message={alertMessage}
 						type={alertType}
-						backgruondColor={alertBackgroundColor}
+						backgroundColor={alertBackgroundColor}
 					/>
 				</div>
 			</div>
